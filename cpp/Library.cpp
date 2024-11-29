@@ -49,7 +49,7 @@ struct Library {
     }
 
     // Borrowing a Book
-    bool borrowBook(const string& isbn, const string& memberId) {
+    bool borrowBook(const string& memberId, const string& isbn) {
         Book* book = findBook(isbn);
         Member* member = findMember(memberId);
 
@@ -69,7 +69,7 @@ struct Library {
     }
 
     // Returning a book
-    bool returnBook(const string& isbn, const string& memberId) {
+    bool returnBook(const string& memberId, const string& isbn) {
         Book* book = findBook(isbn);
         Member* member = findMember(memberId);
 
@@ -181,8 +181,8 @@ int main() {
 
     // Returning a book
     cout << "\nReturning books...\n";
-    library.returnBook("1234567890", "mid1234567890");  // Return "The C++ Programming Language"
-    library.returnBook("1234567891", "mid1234567891");  // Return "Clean Code"
+    library.returnBook("mid1234567890", "1234567890");  // Return "The C++ Programming Language"
+    library.returnBook("mid1234567891", "1234567891");  // Return "Clean Code"
 
     // Display books borrowed by members after returning books
     cout << "\nThe books borrowed by mid1234567890 after returning:\n";
