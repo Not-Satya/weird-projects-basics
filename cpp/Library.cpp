@@ -175,7 +175,7 @@ int main() {
     cout << "\nThe books borrowed by mid1234567893 are:\n";
     library.displayMemberBooks("mid1234567893");
 
-    // Display updated library catalogue (after borrowing books)
+    // Display updated library catalogue after borrowing books
     cout << "\nThe Library Catalogue (After Borrowing):\n";
     library.displayBooks();
 
@@ -191,7 +191,7 @@ int main() {
     cout << "\nThe books borrowed by mid1234567891 after returning:\n";
     library.displayMemberBooks("mid1234567891");
 
-    // Display final library catalogue (after returning books)
+    // Display final library catalogue after returning books
     cout << "\nThe Library Catalogue (After Returning):\n";
     library.displayBooks();
 
