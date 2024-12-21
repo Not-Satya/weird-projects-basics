@@ -56,6 +56,7 @@ int main() {
     return 0;
 }
 
+// add a task to the Priority_Queue
 void addTask(priority_queue<Task>& tasks) {
     string title, description, deadline;
     int priority;
@@ -76,6 +77,7 @@ void addTask(priority_queue<Task>& tasks) {
     cout<<"\nTask added successfully!\n";
 }
 
+// print tasks
 void viewTasks(const priority_queue<Task>& tasks) {
     auto temp = tasks;
     while (!temp.empty()) {
@@ -88,6 +90,7 @@ void viewTasks(const priority_queue<Task>& tasks) {
     }
 }
 
+// Save the tasks in a file
 void saveTasks(const priority_queue<Task>& tasks) {
     ofstream file("tasks.txt");
 
@@ -104,6 +107,7 @@ void saveTasks(const priority_queue<Task>& tasks) {
     cout<<"Task Saved successfully!"<<endl;
 }
 
+// Load teh the tasks from saved file
 void loadTasks(priority_queue<Task>& tasks) {
     ifstream file("tasks.txt");
 
@@ -118,6 +122,8 @@ void loadTasks(priority_queue<Task>& tasks) {
     priority_queue<Task> tempQ;
 
     auto temp = tasks;
+
+    // Tracking unique tasks through a set so that tasks don't get overlapped
     while (!temp.empty()) {
         const Task& t = temp.top();
         string taskID = title + "|" + description + "|" + to_string(priority) + "|" + deadline;
