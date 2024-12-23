@@ -1,3 +1,5 @@
+// This task manager has memory issues... so be careful whiel re-using
+
 #include <iostream>
 #include <queue>
 #include <vector>
